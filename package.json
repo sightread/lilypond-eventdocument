@@ -1,0 +1,37 @@
+{
+  "name": "@sightread/lilypond-eventdocument",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Read a LilyPond score as a typed event document",
+  "author": "Jake Fried",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/listener.d.ts",
+      "default": "./dist/listener.js"
+    }
+  },
+  "files": [
+    "LICENSE",
+    "event-document.ily",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "bun run build",
+    "prepack": "bun run build"
+  },
+  "repository": "github:sightread/lilypond-eventdocument",
+  "devDependencies": {
+    "@types/node": "26.2.0",
+    "typescript": "7.0.2"
+  }
+}
